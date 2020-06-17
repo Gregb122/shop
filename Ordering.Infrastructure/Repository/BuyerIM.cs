@@ -44,6 +44,11 @@ namespace Ordering.Infrastructure.Repository
             return null;
         }
 
+        public List<Buyer> FindAll()
+        {
+            return Buyers;
+        }
+
         public void Update(Buyer Buyer)
         {
             foreach (var o in Buyers)

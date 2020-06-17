@@ -42,6 +42,11 @@ namespace Ordering.Infrastructure.Repository
             return null;
         }
 
+        public List<Order> FindAll()
+        {
+            return orders;
+        }
+
         public void Update(Order order)
         {
             foreach (var o in orders)

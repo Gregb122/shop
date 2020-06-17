@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Ordering.Common
 {
@@ -11,5 +12,7 @@ namespace Ordering.Common
         public void Delete(int objId);
 
         public T Find(int objId);
+
+        public List<T> FindAll();
     }
 }

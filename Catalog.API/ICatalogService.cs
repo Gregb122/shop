@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace Catalog.API
 {
-    interface ICatalogUtilities
+    interface ICatalogService
     {
-        public void AddProduct();
-        public void DeleteProduct();
-        public List<Product> getProductsCatalog();
+        public void AddProduct(Product product);
+        public void DeleteProduct(int Id);
+        public List<Product> GetAllProducts();
     }
 }

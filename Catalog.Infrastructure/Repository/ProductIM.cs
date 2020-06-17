@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Catalog.Infrastructure.Repository
 {
-    class ProductIM : IProductRepository
+    public class ProductIM : IProductRepository
     {
         private List<Product> products = new List<Product>();
 
@@ -26,7 +26,7 @@ namespace Catalog.Infrastructure.Repository
             products.Add(product);
         }
 
-        public void delete(int productId)
+        public void Delete(int productId)
         {
             foreach (var p in products)
                 if (p.Id == productId)

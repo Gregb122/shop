@@ -1,4 +1,5 @@
-﻿using Ordering.Domain.BuyerAggregate.Repository;
+﻿using Ordering.Domain.BuyerAggregate;
+using Ordering.Domain.BuyerAggregate.Repository;
 using Ordering.Domain.OrderAggregate;
 using Ordering.Domain.OrderAggregate.Repository;
 using Ordering.Infrastructure.Repository;
@@ -27,14 +28,14 @@ namespace Ordering.API
             this.buyerRepository = buyerRepository;
         }
 
-        public void AddItemToDraftOrder()
-        {
-            throw new NotImplementedException();
-        }
-
         public void AddOrder(Order order)
         {
             orderRepository.Add(order);
+        }
+
+        public void AddBuyer(Buyer buyer)
+        {
+            buyerRepository.Add(buyer);
         }
 
         public void DeleteOrder(int id)
@@ -42,29 +43,19 @@ namespace Ordering.API
             orderRepository.Delete(id);
         }
 
-        public void GetAllProducts()
+        public void DeleteBuyer(int id)
         {
-            throw new NotImplementedException();
+            buyerRepository.Delete(id);
         }
 
-        public void GetOrderItemsList()
+        public List<Order> GetAllOrders()
         {
-            throw new NotImplementedException();
+            return orderRepository.FindAll();
         }
 
-        public void GetOrderStatus()
+        public List<Buyer> GetAllBuyers()
         {
-            throw new NotImplementedException();
-        }
-
-        public void SetOrderAdress()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void SubmitOrder()
-        {
-            throw new NotImplementedException();
+            return buyerRepository.FindAll();
         }
     }
 }
